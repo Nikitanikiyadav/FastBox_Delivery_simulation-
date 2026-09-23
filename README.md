@@ -26,17 +26,17 @@ The program:
 - **Built-in sanity check** — verifies that every package in the input was delivered exactly once, with no drops or duplicates
 
 ## How it works
-Input JSON → load_data() → assign_packages() → simulate() → add_efficiency() → save_report()
+Input JSON --> load_data() --> assign_packages() --> simulate() --> add_efficiency() --> save_report()
 
 || Step | Function | What it does |
-|---|---|---|
-| 1 | load_data() | Parses and normalizes warehouses, agents, and packages |
-| 2 | distance() | Computes straight-line distance between two (x, y) points |
-| 3 | assign_packages() | Assigns each package to the agent nearest to its warehouse |
-| 4 | simulate() | Calculates total travel distance per agent |
-| 5 | add_efficiency() | Scores agents and identifies the best performer |
-| 6 | save_report() | Writes the final report to a JSON file |
-| Bonus | export_top_performer_csv() | Writes the best agent's stats to a CSV file |
+|-------|----------|----------|
+| 1 | **load_data()** | Parses and normalizes warehouses, agents, and packages |
+| 2 | **distance()** | Computes straight-line distance between two (x, y) points |
+| 3 | **assign_packages()** | Assigns each package to the agent nearest to its warehouse |
+| 4 | **simulate()** | Calculates total travel distance per agent |
+| 5 | **add_efficiency()** | Scores agents and identifies the best performer |
+| 6 | **save_report()** | Writes the final report to a JSON file |
+| Bonus | **export_top_performer_csv()** | Writes the best agent's stats to a CSV file |
 
 ## Design decisions & assumptions
 
