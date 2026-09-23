@@ -28,15 +28,15 @@ The program:
 ## How it works
 Input JSON --> load_data() --> assign_packages() --> simulate() --> add_efficiency() --> save_report()
 
-|| Step | Function | What it does |
-|-------|----------|----------|
-| 1 | **load_data()** | Parses and normalizes warehouses, agents, and packages |
-| 2 | **distance()** | Computes straight-line distance between two (x, y) points |
-| 3 | **assign_packages()** | Assigns each package to the agent nearest to its warehouse |
-| 4 | **simulate()** | Calculates total travel distance per agent |
-| 5 | **add_efficiency()** | Scores agents and identifies the best performer |
-| 6 | **save_report()** | Writes the final report to a JSON file |
-| Bonus | **export_top_performer_csv()** | Writes the best agent's stats to a CSV file |
+| Step | Function | What it does |
+|---|---|---|
+| 1 | load_data() | Parses and normalizes warehouses, agents, and packages into a consistent internal format |
+| 2 | distance() | Computes straight-line distance between two (x, y) points |
+| 3 | assign_packages() | Assigns each package to the agent nearest to its warehouse |
+| 4 | simulate() | Calculates total travel distance per agent across all their assigned packages |
+| 5 | add_efficiency() | Scores agents and identifies the best performer |
+| 6 | save_report() | Writes the final report to a JSON file |
+| Bonus | export_top_performer_csv() | Writes the best agent's stats to a CSV file ||
 
 ## Design decisions & assumptions
 
@@ -48,6 +48,8 @@ The original brief left a couple of details open to interpretation. Here's what 
 Both are documented directly in code comments next to where they're calculated.
 
 ## Project structure
+
+```text
 FastBox_Delivery/
 │
 ├── delivery_system.py
@@ -57,6 +59,7 @@ FastBox_Delivery/
 ├── Python Assignment(Delivery System Test Cases)/
 │   ├── test_case_1.json
 │   ├── test_case_2.json
+│   ├── test_case_3.json
 │   ├── ...
 │   └── test_case_10.json
 │
@@ -65,6 +68,8 @@ FastBox_Delivery/
     ├── report_base_case_top_performer.csv
     ├── report_test_case_1.json
     ├── report_test_case_1_top_performer.csv
+    ├── report_test_case_2.json
+    ├── report_test_case_2_top_performer.csv
     ├── ...
     ├── report_test_case_10.json
     └── report_test_case_10_top_performer.csv
